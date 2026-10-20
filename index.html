@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cosecha Verde Agrícola S.A. de C.V.: producción agrícola sustentable.">
+  <title>Cosecha Verde Agrícola S.A. de C.V.</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <header id="encabezado">
+    <nav aria-label="Navegación principal">
+      <a href="#encabezado" class="logo">Cosecha Verde</a>
+      <ul>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h1>Cosecha Verde Agrícola S.A. de C.V.</h1>
+      <p class="lead">Empresa del sector primario dedicada al cultivo, cosecha y comercialización de granos y hortalizas con prácticas sustentables.</p>
+      <div class="mv">
+        <section class="tarjeta-mv">
+          <h2>Misión</h2>
+          <p>Producir alimentos de calidad cuidando el agua y el suelo, para abastecer a nuestros clientes de forma confiable.</p>
+        </section>
+        <section class="tarjeta-mv">
+          <h2>Visión</h2>
+          <p>Ser una empresa agrícola líder y reconocida por su innovación y compromiso con el medio ambiente.</p>
+        </section>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section id="proyectos" aria-labelledby="t-proyectos">
+      <h2 id="t-proyectos">Proyectos destacados</h2>
+      <div class="rejilla">
+        <article class="proyecto">
+          <img src="img/cultivos.svg" alt="Ilustración de campos de cultivo verdes bajo un sol amarillo">
+          <h3>Cultivo de trigo y maíz</h3>
+          <p>Siembra y cosecha en más de 500 hectáreas con semillas certificadas y rotación de cultivos.</p>
+          <a class="enlace" href="#contacto">Solicitar información</a>
+        </article>
+        <article class="proyecto">
+          <img src="img/riego.svg" alt="Ilustración de un campo con agua de riego azul">
+          <h3>Riego tecnificado</h3>
+          <p>Sistema de riego por goteo que reduce el consumo de agua y mejora el rendimiento por hectárea.</p>
+          <a class="enlace" href="#contacto">Solicitar información</a>
+        </article>
+        <article class="proyecto">
+          <img src="img/empaque.svg" alt="Ilustración de colinas de cultivo al atardecer">
+          <h3>Empaque y distribución</h3>
+          <p>Selección, empaque y entrega de hortalizas frescas a mercados y centrales de abasto.</p>
+          <a class="enlace" href="#contacto">Solicitar información</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto" aria-labelledby="t-contacto">
+      <h2 id="t-contacto">Contáctanos</h2>
+      <form id="formulario" action="#" method="post" novalidate>
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required minlength="3" autocomplete="name">
+        </div>
+        <div class="campo">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" required autocomplete="email">
+        </div>
+        <div class="campo">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required minlength="10"></textarea>
+        </div>
+        <button type="submit">Enviar mensaje</button>
+        <p id="estado" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <ul class="redes">
+      <li><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
+      <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+    <p>&copy; 2026 Cosecha Verde Agrícola S.A. de C.V. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    var f = document.getElementById('formulario');
+    var estado = document.getElementById('estado');
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!f.checkValidity()) {
+        estado.textContent = 'Revisa los campos: completa todo y usa un correo válido.';
+        estado.className = 'error';
+        f.reportValidity();
+        return;
+      }
+      estado.textContent = 'Gracias, tu mensaje fue validado correctamente.';
+      estado.className = 'ok';
+      f.reset();
+    });
+  </script>
+</body>
+</html>
